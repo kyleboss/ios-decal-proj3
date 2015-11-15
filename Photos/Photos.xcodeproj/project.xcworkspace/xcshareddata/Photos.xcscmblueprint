@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FB61020B3E374F8D537523B3FB1E0FC074EF428F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FB61020B3E374F8D537523B3FB1E0FC074EF428F" : 0,
+    "711342287F37851AA2ABE6BEC799823D44760DB8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F502972E-C381-41CA-9ACC-E2883D250663",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FB61020B3E374F8D537523B3FB1E0FC074EF428F" : "ios-decal-proj3\/",
+    "711342287F37851AA2ABE6BEC799823D44760DB8" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Photos",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Photos\/Photos.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tictactoe98172\/master-drive.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "711342287F37851AA2ABE6BEC799823D44760DB8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kyleboss\/ios-decal-proj3.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FB61020B3E374F8D537523B3FB1E0FC074EF428F"
+    }
+  ]
+}

@@ -9,9 +9,23 @@
 import Foundation
 
 class InstagramAPI {
+    
+    func makeNewPhotoFromInstaJSON(photoJson:NSDictionary) -> Photo {
+        let likes:NSDictionary          = photoJson.valueForKey("likes") as! NSDictionary
+        let numLikes:Int                = (likes.valueForKey("count"))! as! Int
+        let allResOfPhoto:NSDictionary  = photoJson.valueForKey("images") as! NSDictionary
+        let lowResPhoto:NSDictionary    = allResOfPhoto.valueForKey("low_resolution") as! NSDictionary
+        let photoUrl:String             = (lowResPhoto.valueForKey("url"))! as! String
+        let user:NSDictionary           = photoJson.valueForKey("user") as! NSDictionary
+        let username:String             = (user.valueForKey("username"))! as! String
+        let photoParams:NSDictionary    = ["likes": numLikes, "url": photoUrl, "username": username]
+        let newPhoto                    = Photo(data: photoParams)
+        return newPhoto
+    }
+    
     /* Connects with the Instagram API and pulls resources from the server. */
     func loadPhotos(completion: (([Photo]) -> Void)!) {
-        /* 
+        /*
          * 1. Get the endpoint URL to the popular photos 
          *    HINT: Look in Utils
          * 2. Create a Session
@@ -24,7 +38,7 @@ class InstagramAPI {
          */
         // FILL ME IN
         var url: NSURL
-
+        url = Utils.getPopularURL()
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if error == nil {
@@ -33,6 +47,13 @@ class InstagramAPI {
                 do {
                     let feedDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     // FILL ME IN, REMEMBER TO USE FORCED DOWNCASTING
+                    photos = []
+                    let photosFromJson = feedDictionary.valueForKey("data") as! NSArray
+                    for (var i = 0; i < photosFromJson.count; i++) {
+                        let currentPhoto:NSDictionary   = photosFromJson.objectAtIndex(i) as! NSDictionary
+                        let newPhoto:Photo              = self.makeNewPhotoFromInstaJSON(currentPhoto)
+                        photos.append(newPhoto)
+                    }
                     
                     
                     // DO NOT CHANGE BELOW
